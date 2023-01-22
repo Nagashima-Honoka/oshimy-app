@@ -1,1 +1,1 @@
-# oshi-mine
+# oshimai
