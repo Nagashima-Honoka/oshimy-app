@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1022787331678",
+    "project_id": "oshimai-app",
+    "storage_bucket": "oshimai-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022787331678:android:310861d0bcad4c2a96b6cf",
+        "android_client_info": {
+          "package_name": "com.example.oshimai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022787331678-vuifodok6dq6icnhjadj328slaab1elo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJStUEHgnFqPSV7te97WxGX-y0AEolDIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022787331678-vuifodok6dq6icnhjadj328slaab1elo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1022787331678-t0f1sl9vnhbp3ardfn95dvlv4k8hiagm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.oshimai"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
