@@ -8,6 +8,7 @@ void main() async {
   // Firebase初期化
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+    name: 'oshimai-dev',
     options: DefaultFirebaseOptions.currentPlatform,
   );
   // 最初に表示するWidget
