@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "162597676272",
+    "firebase_url": "https://oshimai-dev-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "oshimai-dev",
     "storage_bucket": "oshimai-dev.appspot.com"
   },

@@ -52,6 +52,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '162597676272',
     projectId: 'oshimai-dev',
     authDomain: 'oshimai-dev.firebaseapp.com',
+    databaseURL: 'https://oshimai-dev-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'oshimai-dev.appspot.com',
     measurementId: 'G-Q3EY93P4P4',
   );
@@ -61,6 +62,7 @@ class DefaultFirebaseOptions {
     appId: '1:162597676272:android:64d743238cd3c6b78e4e35',
     messagingSenderId: '162597676272',
     projectId: 'oshimai-dev',
+    databaseURL: 'https://oshimai-dev-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'oshimai-dev.appspot.com',
   );
 
@@ -69,6 +71,7 @@ class DefaultFirebaseOptions {
     appId: '1:162597676272:ios:af0af7ef5f2ac25e8e4e35',
     messagingSenderId: '162597676272',
     projectId: 'oshimai-dev',
+    databaseURL: 'https://oshimai-dev-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'oshimai-dev.appspot.com',
     iosClientId: '162597676272-p1l4lp7qsllmfch8sqbo19cla2lmvn44.apps.googleusercontent.com',
     iosBundleId: 'com.example.oshimai',
