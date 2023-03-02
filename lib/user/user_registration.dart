@@ -77,7 +77,7 @@ class _UserRegistrationState extends State<UserRegistration> {
                       );
                       // ユーザー登録に成功した場合
                       // ホーム画面に遷移＋ログイン画面を破棄
-                      await Navigator.of(context).pushReplacementNamed("/home");
+                      await Navigator.of(context).pushReplacementNamed("/user_data");
                       // TODO この後、ユーザー詳細登録画面に遷移し、音楽ジャンル登録画面に遷移する。というのを実装
                     } catch (e) {
                       // ユーザー登録に失敗した場合
