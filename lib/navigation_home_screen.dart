@@ -4,6 +4,7 @@ import 'package:oshimai/user/password_edit.dart';
 import 'package:oshimai/user/user_registration.dart';
 import 'package:oshimai/user/user_data.dart';
 import 'package:oshimai/user/music_category_selection.dart';
+import 'package:oshimai/instruction/oshi_registration_prompt.dart';
 import 'home_screen.dart';
 
 class NavigationHomeScreen extends StatelessWidget {
@@ -22,6 +23,7 @@ class NavigationHomeScreen extends StatelessWidget {
         '/user_registration': (context) => UserRegistration(),
         '/user_data': (context) => UserData(),
         '/music_category_selection': (context) => MusicCategorySelection(),
+        '/oshi_registration_prompt': (context) => OshiRegistrationPrompt(),
         '/home': (context) => HomePage(),
       },
     );

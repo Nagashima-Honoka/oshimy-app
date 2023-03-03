@@ -23,7 +23,7 @@ class _MusicCategorySelectionState extends State<MusicCategorySelection> {
             onPressed: () async {
               // TODO 戻るボタンの削除
               // TODO HOME画面にスキップするボタンの実装
-              await Navigator.of(context).pushReplacementNamed("/home");
+              await Navigator.of(context).pushReplacementNamed("/oshi_registration_prompt");
             },
           ),
         ],
@@ -71,7 +71,7 @@ class _MusicCategorySelectionState extends State<MusicCategorySelection> {
                       //TODO 登録処理
                       // 登録に成功した場合
                       // 音楽ジャンル選択画面に遷移＋ユーザー詳細登録画面を破棄
-                      await Navigator.of(context).pushReplacementNamed("/home");
+                      await Navigator.of(context).pushReplacementNamed("/oshi_registration_prompt");
                     } catch (e) {
                       // 登録に失敗した場合
                       setState(() {
