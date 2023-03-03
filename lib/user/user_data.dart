@@ -40,7 +40,6 @@ class _UserDataState extends State<UserData> {
               ),
               SizedBox(
                 child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.left,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     // ユーザー名入力
@@ -87,14 +86,40 @@ class _UserDataState extends State<UserData> {
                       label: const Text('生年月日'),
                     ),
                     // 性別入力
-                    TextFormField(
-                      // TODO 選択肢から選べるようにする
-                      decoration: const InputDecoration(labelText: '性別'),
-                      onChanged: (String value) {
-                        setState(() {
-                          gender = value;
-                        });
-                      },
+                    SizedBox(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          //TODO 性別登録の実装
+                          OutlinedButton.icon(
+                            onPressed: (){},
+                            icon: const Icon(
+                              Icons.female,
+                              color: Colors.blue,
+                              size: 30.0
+                            ),
+                            label: const Text('女の子'),
+                          ),
+                          OutlinedButton.icon(
+                            onPressed: (){},
+                            icon: const Icon(
+                                Icons.male,
+                                color: Colors.blue,
+                                size: 30.0
+                            ),
+                            label: const Text('男の子'),
+                          ),
+                          OutlinedButton.icon(
+                            onPressed: (){},
+                            icon: const Icon(
+                                Icons.transgender,
+                                color: Colors.blue,
+                                size: 30.0
+                            ),
+                            label: const Text('トランス'),
+                          ),
+                        ]
+                      )
                     ),
                     // 都道府県入力
                     TextFormField(
