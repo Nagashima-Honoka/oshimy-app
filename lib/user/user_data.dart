@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 // ユーザー詳細画面用Widget
 class UserData extends StatefulWidget {
@@ -12,7 +13,7 @@ class _UserDataState extends State<UserData> {
   // 入力したデータ
   String user_name = '';
   String oshimai_id = '';
-  String birthday = '';
+  DateTime birthday = DateTime(1900, 1, 1);
   String gender = '';
   String prefecture_id = '';
   String address = '';
@@ -28,101 +29,124 @@ class _UserDataState extends State<UserData> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
+              const SizedBox(
                 // メッセージ表示
-                child: const Text('あなたのことを教えてね！',
+                child: Text('あなたのことを教えてね！',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue
                     )
                 ),
               ),
-              // ユーザー名入力
-              TextFormField(
-                decoration: const InputDecoration(labelText: 'ユーザー名'),
-                onChanged: (String value) {
-                  setState(() {
-                    user_name = value;
-                  });
-                },
-              ),
-              // oshimaiID入力
-              TextFormField(
-                decoration: const InputDecoration(labelText: 'オシマイID'),
-                onChanged: (String value) {
-                  setState(() {
-                    oshimai_id = value;
-                  });
-                },
-              ),
-              // 生年月日入力
-              TextFormField(
-                // TODO カレンダーから選べるようにする
-                decoration: const InputDecoration(labelText: '生年月日'),
-                onChanged: (String value) {
-                  setState(() {
-                    birthday = value;
-                  });
-                },
-              ),
-              // 性別入力
-              TextFormField(
-                // TODO 選択肢から選べるようにする
-                decoration: const InputDecoration(labelText: '性別'),
-                onChanged: (String value) {
-                  setState(() {
-                    gender = value;
-                  });
-                },
-              ),
-              // 都道府県入力
-              TextFormField(
-                // TODO 選択肢から選べるようにする
-                decoration: const InputDecoration(labelText: '都道府県'),
-                onChanged: (String value) {
-                  setState(() {
-                    prefecture_id = value;
-                  });
-                },
-              ),
-              // oshimaiID入力
-              TextFormField(
-                decoration: const InputDecoration(labelText: '市区町村'),
-                onChanged: (String value) {
-                  setState(() {
-                    address = value;
-                  });
-                },
-              ),
-              Container(
-                padding: const EdgeInsets.all(8),
-                // エラーメッセージ表示
-                // TODO エラーハンドリング
-                // TODO 各項目バリデーション
-                // TODO 必須か必須でないかチェック
-                child: Text(infoText),
-              ),
-              const SizedBox(height: 8),
               SizedBox(
-                width: double.infinity,
-                // 登録ボタン
-                child: ElevatedButton(
-                  child: const Text('登録'),
-                  onPressed: () async {
-                    try {
-                      //TODO 登録処理
-                      // 登録に成功した場合
-                      // 音楽ジャンル選択画面に遷移＋ユーザー詳細登録画面を破棄
-                      await Navigator.of(context).pushReplacementNamed("/music_category_selection");
-                    } catch (e) {
-                      // 登録に失敗した場合
-                      setState(() {
-                        infoText = "登録に失敗しました：${e.toString()}";
-                      });
-                    }
-                  },
-                ),
-              ),
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.left,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    // ユーザー名入力
+                    TextFormField(
+                      decoration: const InputDecoration(labelText: 'ユーザー名'),
+                      onChanged: (String value) {
+                        setState(() {
+                          user_name = value;
+                        });
+                      },
+                    ),
+                    // oshimaiID入力
+                    TextFormField(
+                      decoration: const InputDecoration(labelText: 'オシマイID'),
+                      onChanged: (String value) {
+                        setState(() {
+                          oshimai_id = value;
+                        });
+                      },
+                    ),
+                    // 生年月日入力
+                    TextButton.icon(
+                      // ボタンが押された時に表示する
+                      onPressed: () {
+                        DatePicker.showDatePicker(context,
+                            showTitleActions: true,
+                            minTime: DateTime(1900, 1, 1),
+                            maxTime: DateTime(2049, 12, 31),
+                            onConfirm: (DateTime date) {
+                              setState(() {
+                                birthday = date;
+                              });
+                              _UserDataState(); //新しい日付でデータを再取得する
+                            },
+                            currentTime: birthday, locale: LocaleType.jp
+                        );
+                      },
+                      // TODO 生年月日の登録の実装
+                      icon: const Icon(
+                          Icons.event,
+                          color: Colors.blue,
+                          size: 30.0
+                      ),
+                      label: const Text('生年月日'),
+                    ),
+                    // 性別入力
+                    TextFormField(
+                      // TODO 選択肢から選べるようにする
+                      decoration: const InputDecoration(labelText: '性別'),
+                      onChanged: (String value) {
+                        setState(() {
+                          gender = value;
+                        });
+                      },
+                    ),
+                    // 都道府県入力
+                    TextFormField(
+                      // TODO 選択肢から選べるようにする
+                      decoration: const InputDecoration(labelText: '都道府県'),
+                      onChanged: (String value) {
+                        setState(() {
+                          prefecture_id = value;
+                        });
+                      },
+                    ),
+                    // 市区町村入力
+                    TextFormField(
+                      decoration: const InputDecoration(labelText: '市区町村'),
+                      onChanged: (String value) {
+                        setState(() {
+                          address = value;
+                        });
+                      },
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      // エラーメッセージ表示
+                      // TODO エラーハンドリング
+                      // TODO 各項目バリデーション
+                      // TODO 必須か必須でないかチェック
+                      child: Text(infoText),
+                    ),
+                    const SizedBox(height: 8),
+                    SizedBox(
+                      width: double.infinity,
+                      // 登録ボタン
+                      child: ElevatedButton(
+                        child: const Text('登録'),
+                        onPressed: () async {
+                          try {
+                            //TODO 登録処理
+                            // 登録に成功した場合
+                            // 音楽ジャンル選択画面に遷移＋ユーザー詳細登録画面を破棄
+                            await Navigator.of(context).pushReplacementNamed("/music_category_selection");
+                          } catch (e) {
+                            // 登録に失敗した場合
+                            setState(() {
+                              infoText = "登録に失敗しました：${e.toString()}";
+                            });
+                          }
+                        },
+                      ),
+                    ),
+                  ]
+                )
+              )
             ]
           )
         )
