@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-// Home画面用Widget
-class OshiRegistrationPrompt extends StatelessWidget {
+// ユーザー登録後オッシーくんハンドリング画面用Widget
+class UserRegistrationPrompt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +45,7 @@ class OshiRegistrationPrompt extends StatelessWidget {
                       child: OutlinedButton(
                         onPressed: (){
                           // グループ登録画面に遷移＋この画面を破棄
-                          Navigator.of(context).pushReplacementNamed("/");
+                          Navigator.of(context).pushReplacementNamed("/oshi_group_data");
                         },
                         child: const Text('グループ？'),
                       ),
