@@ -19,7 +19,7 @@ class PasswordEdit extends StatelessWidget {
       ),
       body: const Center(
         child: SizedBox(
-          // TODO パスワード再設定画面の実装￥
+          // TODO パスワード再設定画面の実装
           child: Text('パスワード再設定画面',
               style: TextStyle(
                   fontSize: 30,
