@@ -10,7 +10,7 @@ class _MusicCategorySelectionState extends State<MusicCategorySelection> {
   // メッセージ表示用
   String infoText = '';
   // 入力したデータ
-  String music_id = '';
+  String musicId = '';
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class _MusicCategorySelectionState extends State<MusicCategorySelection> {
                 decoration: const InputDecoration(labelText: '好きな音楽ジャンル'),
                 onChanged: (String value) {
                   setState(() {
-                    music_id = value;
+                    musicId = value;
                   });
                 },
               ),

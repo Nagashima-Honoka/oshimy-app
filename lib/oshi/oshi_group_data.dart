@@ -11,13 +11,13 @@ class _OshiGroupDataState extends State<OshiGroupData> {
   // メッセージ表示用
   String infoText = '';
   // 入力したデータ
-  String group_header_image = '';
-  String group_name = '';
+  String groupHeaderImage = '';
+  String groupName = '';
   //TODO タレント名はリストにする
-  String talent_name = '';
-  String anniverary = '';
-  DateTime anniverary_date = DateTime(1900, 1, 1);
-  String group_memo = '';
+  String talentName = '';
+  String anniversary = '';
+  DateTime anniversaryDate = DateTime(1900, 1, 1);
+  String groupMemo = '';
   //TODO 将来的に、ユーザー情報が存在する場合はユーザーが情報を編集できるような作りにしたい
 
   @override
@@ -61,7 +61,7 @@ class _OshiGroupDataState extends State<OshiGroupData> {
                                   decoration: const InputDecoration(labelText: 'グループ名'),
                                   onChanged: (String value) {
                                     setState(() {
-                                      group_name = value;
+                                      groupName = value;
                                     });
                                   },
                                 ),
@@ -70,7 +70,7 @@ class _OshiGroupDataState extends State<OshiGroupData> {
                                   decoration: const InputDecoration(labelText: 'タレント名'),
                                   onChanged: (String value) {
                                     setState(() {
-                                      talent_name = value;
+                                      talentName = value;
                                     });
                                   },
                                 ),
@@ -88,7 +88,7 @@ class _OshiGroupDataState extends State<OshiGroupData> {
                                   decoration: const InputDecoration(labelText: '記念日タイトル'),
                                   onChanged: (String value) {
                                     setState(() {
-                                      anniverary = value;
+                                      anniversary = value;
                                     });
                                   },
                                 ),
@@ -102,11 +102,11 @@ class _OshiGroupDataState extends State<OshiGroupData> {
                                         maxTime: DateTime(2049, 12, 31),
                                         onConfirm: (DateTime date) {
                                           setState(() {
-                                            anniverary_date = date;
+                                            anniversaryDate = date;
                                           });
                                           _OshiGroupDataState(); //新しい日付でデータを再取得する
                                         },
-                                        currentTime: anniverary_date, locale: LocaleType.jp
+                                        currentTime: anniversaryDate, locale: LocaleType.jp
                                     );
                                   },
                                   //TODO ここはカレンダーから選択できるようにしたいな
@@ -132,7 +132,7 @@ class _OshiGroupDataState extends State<OshiGroupData> {
                                   decoration: const InputDecoration(labelText: 'フリーメモ'),
                                   onChanged: (String value) {
                                     setState(() {
-                                      anniverary = value;
+                                      groupMemo = value;
                                     });
                                   },
                                 ),

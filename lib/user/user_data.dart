@@ -11,11 +11,11 @@ class _UserDataState extends State<UserData> {
   // メッセージ表示用
   String infoText = '';
   // 入力したデータ
-  String user_name = '';
-  String oshimai_id = '';
+  String userName = '';
+  String oshimaiId = '';
   DateTime birthday = DateTime(1900, 1, 1);
   String gender = '';
-  String prefecture_id = '';
+  String prefectureId = '';
   String address = '';
   //TODO 将来的に、ユーザー情報が存在する場合はユーザーが情報を編集できるような作りにしたい
   //TODO 編集バージョンでは、好きな音楽ジャンルも編集できるようにしようかな
@@ -47,7 +47,7 @@ class _UserDataState extends State<UserData> {
                       decoration: const InputDecoration(labelText: 'ユーザー名'),
                       onChanged: (String value) {
                         setState(() {
-                          user_name = value;
+                          userName = value;
                         });
                       },
                     ),
@@ -56,7 +56,7 @@ class _UserDataState extends State<UserData> {
                       decoration: const InputDecoration(labelText: 'オシマイID'),
                       onChanged: (String value) {
                         setState(() {
-                          oshimai_id = value;
+                          oshimaiId = value;
                         });
                       },
                     ),
@@ -127,7 +127,7 @@ class _UserDataState extends State<UserData> {
                       decoration: const InputDecoration(labelText: '都道府県'),
                       onChanged: (String value) {
                         setState(() {
-                          prefecture_id = value;
+                          prefectureId = value;
                         });
                       },
                     ),
