@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oshimai/calendar.dart';
 import 'package:oshimai/user/user_login.dart';
 import 'package:oshimai/user/password_edit.dart';
 import 'package:oshimai/user/user_registration.dart';
@@ -31,6 +32,7 @@ class NavigationHomeScreen extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/oshi_group_data': (context) => OshiGroupData(),
         '/oshi_group_registration_prompt': (context) => OshiGroupRegistrationPrompt(),
+        '/calendar': (context) => Calendar(),
       },
     );
   }
