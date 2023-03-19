@@ -12,6 +12,13 @@ const anniversaryList = [
   },
 ];
 
+// TODO:推しデータと画像をセット
+const memberList = [
+  {'name': 'オッシーくん', 'oshi_flg' : 1},
+  {'name': '長内くん', 'oshi_flg' : 0},
+  {'name': 'Aくん', 'oshi_flg' : 0},
+];
+
 // Home画面用Widget
 class HomePage extends StatelessWidget {
   // TODO:推しグループ名を表示セット
@@ -25,7 +32,6 @@ class HomePage extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.all(24),
         child: ListView(
-          // mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Center(
               child: OutlinedButton(
@@ -52,9 +58,12 @@ class HomePage extends StatelessWidget {
               height: 300,
               width: double.infinity,
               color: Colors.lightBlueAccent,
-              child: const Center(
-                child: Text('推し一覧を表示させる領域'),
-              ),
+              // child: Column(
+              //   children: [
+              //     for(var member in memberList)
+              //       if ()
+              //   ],
+              // ),
             ),
             Container(
               padding: const EdgeInsets.all(24),
