@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'screens/firebase_options.dart';
 import 'navigation_home_screen.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 
 void main() async {
@@ -11,8 +12,11 @@ void main() async {
     name: 'oshimai-dev',
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // ローカライズ
   // 最初に表示するWidget
-  runApp(OshimaiApp());
+  initializeDateFormatting().then((_) => runApp(OshimaiApp()));
+  // 最初に表示するWidget
+  // runApp(OshimaiApp());
 }
 
 class OshimaiApp extends StatelessWidget {
