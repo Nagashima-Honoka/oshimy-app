@@ -15,8 +15,6 @@ void main() async {
   // ローカライズ
   // 最初に表示するWidget
   initializeDateFormatting().then((_) => runApp(OshimaiApp()));
-  // 最初に表示するWidget
-  // runApp(OshimaiApp());
 }
 
 class OshimaiApp extends StatelessWidget {
