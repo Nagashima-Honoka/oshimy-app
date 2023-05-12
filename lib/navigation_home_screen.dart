@@ -9,6 +9,7 @@ import 'package:oshimai/screens/instruction/user_registration_prompt.dart';
 import 'package:oshimai/screens/home_screen.dart';
 import 'package:oshimai/screens/oshi/oshi_group_data.dart';
 import 'package:oshimai/screens/instruction/oshi_group_registration_prompt.dart';
+import 'package:oshimai/screens/splash_screen.dart';
 
 class NavigationHomeScreen extends StatelessWidget {
   @override
@@ -21,9 +22,9 @@ class NavigationHomeScreen extends StatelessWidget {
         primaryColor: Colors.white,
       ),
       routes: {
+        '/': (context) => SplashScreen(),
         //TODO ログインページはログインしていない時のみ表示するように変更が必要
-        '/': (context) => LoginPage(),
-        // '/login': (context) => LoginPage(),
+        '/login': (context) => LoginPage(),
         '/password_edit': (context) => PasswordEdit(),
         '/user_registration': (context) => UserRegistration(),
         '/user_data': (context) => UserData(),
