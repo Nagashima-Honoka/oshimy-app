@@ -221,28 +221,28 @@ class _UserDataState extends State<UserData> {
                     //     });
                     //   },
                     // ),
-                    DropdownButtonFormField(
-                      //TODO 選択肢のこのUIどうなんかなあ…
-                      hint: Text('都道府県'),
-                      value: _selectedPrefecture,
-                      items: _getPrefectures().map((String prefecture) {
-                        return DropdownMenuItem<String>(
-                          value: prefecture,
-                          child: Text(prefecture),
-                        );
-                      }).toList(),
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          _selectedPrefecture = newValue;
-                        });
-                      },
-                      validator: (value) {
-                        if (value == null) {
-                          return '都道府県を選択してください';
-                        }
-                        return null;
-                      },
-                    ),
+                    // DropdownButtonFormField(
+                    //   //TODO 選択肢のこのUIどうなんかなあ…
+                    //   hint: Text('都道府県'),
+                    //   value: _selectedPrefecture,
+                    //   items: _getPrefectures().map((String prefecture) {
+                    //     return DropdownMenuItem<String>(
+                    //       value: prefecture,
+                    //       child: Text(prefecture),
+                    //     );
+                    //   }).toList(),
+                    //   onChanged: (String? newValue) {
+                    //     setState(() {
+                    //       _selectedPrefecture = newValue;
+                    //     });
+                    //   },
+                    //   validator: (value) {
+                    //     if (value == null) {
+                    //       return '都道府県を選択してください';
+                    //     }
+                    //     return null;
+                    //   },
+                    // ),
                     TextFormField(
                       controller: _addressController,
                       decoration: InputDecoration(labelText: '市区町村'),
@@ -362,15 +362,15 @@ class _UserDataState extends State<UserData> {
   //   ];
   // }
 
-  Future<List<String>> _fetchPrefectures() async {
-    var api = YourApi(); // 生成されたクライアントコード内のAPIクラスをインスタンス化
-    var response = await api.getPrefectures(); // APIクラス内の都道府県取得メソッドを呼び出す
-
-    // 必要に応じてレスポンスデータを変換してリストに格納
-    List<String> prefectures = response.map((prefecture) => prefecture.name).toList();
-
-    return prefectures;
-  }
+  // Future<List<String>> _fetchPrefectures() async {
+  //   var api = YourApi(); // 生成されたクライアントコード内のAPIクラスをインスタンス化
+  //   var response = await api.getPrefectures(); // APIクラス内の都道府県取得メソッドを呼び出す
+  //
+  //   // 必要に応じてレスポンスデータを変換してリストに格納
+  //   List<String> prefectures = response.map((prefecture) => prefecture.name).toList();
+  //
+  //   return prefectures;
+  // }
 
 
 }
