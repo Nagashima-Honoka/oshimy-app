@@ -25,8 +25,8 @@ class _LoginPageState extends State<LoginPage> {
             children: <Widget>[
               Container(
                 padding: const EdgeInsets.all(8),
-                // メッセージ表示
-                child: const Text('Oshimai',
+                // アプリタイトル
+                child: const Text('Oshimy',
                     style: TextStyle(
                         fontSize: 70,
                         fontWeight: FontWeight.bold,
